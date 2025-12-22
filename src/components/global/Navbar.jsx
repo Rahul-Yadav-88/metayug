@@ -2,14 +2,14 @@
 
 import { useEffect, useState } from "react"
 import { Menu, X } from "lucide-react"
-import Link from "next/link";
+import Link from "next/link"
 
 const navLinks = [
-  { name: "Home", href: "#" },
-  { name: "Project", href: "/Project" },
+  { name: "Home", href: "/" },
+  { name: "Portfolio", href: "/Projects" },
   { name: "Services", href: "#" },
   { name: "About", href: "#" },
-  { name: "Blog", href: "#" },
+  { name: "Blog", href: "/Blog" },
 ]
 
 export default function Navbar() {
@@ -53,11 +53,9 @@ export default function Navbar() {
               ))}
             </ul>
 
-           <Link href="/contact">
-  <button className="px-6 py-2 bg-[#9c8f7a] text-black text-sm uppercase tracking-widest hover:bg-white transition">
-    Book a Call
-  </button>
-</Link>
+            <Link href={'/Contact'} className="px-6 py-2 bg-[#9c8f7a] text-black text-sm uppercase tracking-widest hover:bg-white transition">
+              Book a Call
+            </Link>
           </div>
 
           {/* Mobile Menu Button */}
