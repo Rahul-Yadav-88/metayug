@@ -24,6 +24,11 @@ const projects = [
     title: "White Elegant Residential",
     image: "projects-img5.png",
   },
+  {
+    id: "exquisite-marble-bathroom",
+    title: "Exquisite Marble Bathroom",
+    image: "projects-img7.png",
+  },
 ];
 
 
@@ -111,54 +116,65 @@ const features = [
 </section>
 
 {/* section 3 */}
-<section className='mt-20'>
-  <div className='text-white flex flex-col items-center gap-10'>
+<section className="mt-20">
+  <div className="text-white flex flex-col items-center gap-10">
     <img src="projects-img.png" alt="" />
-    <h3 className='text-2xl md:text-4xl text-center'>Explore Our Gallery <br />
-of Sohpisticated Interiors</h3>
+    <h3 className="text-2xl md:text-4xl text-center">
+      Explore Our Gallery <br /> of Sophisticated Interiors
+    </h3>
   </div>
 
-     <div className="max-w-7xl mx-auto px-6 space-y-24 mt-20">
+  <div className="max-w-7xl mx-auto px-6 space-y-24 mt-20">
+    {projects
+      .reduce((rows, _, index) => {
+        if (index % 2 === 0) {
+          rows.push(projects.slice(index, index + 2))
+        }
+        return rows
+      }, [])
+      .map((row, rowIndex) => {
+        const isEvenRow = rowIndex % 2 === 0
+        const isSingle = row.length === 1
 
-        {projects.reduce((rows, _, index) => {
-          if (index % 2 === 0) {
-            rows.push(projects.slice(index, index + 2))
-          }
-          return rows
-        }, []).map((row, rowIndex) => {
-          const isEvenRow = rowIndex % 2 === 0
-
-          return (
-            <div
-              key={rowIndex}
-              className="grid grid-cols-1 md:grid-cols-12 gap-12"
-            >
-              {/* First Image */}
-              <div
-                className={`${
-                  isEvenRow ? "md:col-span-7" : "md:col-span-5"
-                }`}
-              >
+        return (
+          <div
+            key={rowIndex}
+            className="grid grid-cols-1 md:grid-cols-12 gap-12"
+          >
+            {/* If only one image → full width */}
+            {isSingle ? (
+              <div className="md:col-span-12">
                 <ImageCard {...row[0]} />
               </div>
+            ) : (
+              <>
+                {/* First Image */}
+                <div
+                  className={`${
+                    isEvenRow ? "md:col-span-7" : "md:col-span-5"
+                  }`}
+                >
+                  <ImageCard {...row[0]} />
+                </div>
 
-              {/* Second Image */}
-              <div
-                className={`${
-                  isEvenRow ? "md:col-span-5" : "md:col-span-7"
-                }`}
-              >
-                <ImageCard {...row[1]} />
-              </div>
-            </div>
-          )
-        })}
-
-      </div>
-
+                {/* Second Image */}
+                <div
+                  className={`${
+                    isEvenRow ? "md:col-span-5" : "md:col-span-7"
+                  }`}
+                >
+                  <ImageCard {...row[1]} />
+                </div>
+              </>
+            )}
+          </div>
+        )
+      })}
+  </div>
 </section>
 
-<section className='mt-20'>
+
+{/* <section className='mt-20'>
   <div className='flex justify-center'>
     <div className=' w-[80%] text-white space-y-3'>
     <img src="projects-img7.png" alt="" className='w-full min-h-[200px]'/>
@@ -166,7 +182,7 @@ of Sohpisticated Interiors</h3>
     <button className='flex items-center gap-2'>Details <ArrowRight size={20}/></button>
   </div>
   </div>
-</section>
+</section> */}
 
  <section className="bg-[#1b1b1b] text-[#e5e5e5] py-16 px-6 md:px-12">
       <div className="max-w-[85%] mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
