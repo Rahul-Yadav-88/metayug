@@ -1,9 +1,9 @@
 import React from 'react'
-import Projects from '../../components/Projects/Projects'
+
 const page = () => {
   return (
-    <div>
-      <Projects/>
+    <div className='mt-40'>
+      Home
     </div>
   )
 }

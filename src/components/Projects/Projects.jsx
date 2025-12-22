@@ -1,33 +1,31 @@
 import { ArrowRight } from 'lucide-react'
+import Link from 'next/link';
 import React from 'react'
 
 const Projects = () => {
-  const projects = [
+const projects = [
   {
+    id: "bachelor-pad",
     title: "Contemporary Bachelor Pad",
-    image:
-      "projects-img2.png",
-  
+    image: "projects-img2.png",
   },
   {
+    id: "modern-living",
     title: "Modern Living Room",
-    image:
-      "projects-img3.png",
-      
+    image: "projects-img3.png",
   },
   {
+    id: "olive-opulence",
     title: "Olive Wood Opulence",
-    image:
-      "projects-img4.png",
-      
+    image: "projects-img4.png",
   },
   {
+    id: "white-elegant",
     title: "White Elegant Residential",
-    image:
-      "projects-img5.png",
-    
+    image: "projects-img5.png",
   },
-]
+];
+
 
 const features = [
   {
@@ -216,7 +214,7 @@ of Sohpisticated Interiors</h3>
 export default Projects
 
 
-function ImageCard({ title, image }) {
+function ImageCard({ id, title, image }) {
   return (
     <div>
       {/* Image */}
@@ -233,10 +231,16 @@ function ImageCard({ title, image }) {
         <h3 className="text-white text-lg font-serif">
           {title}
         </h3>
-        <p className="mt-2 text-xs tracking-[0.25em] uppercase text-gray-400">
+
+
+        {/* DETAILS BUTTON */}
+        <Link
+          href={`/Projects/${id}`}
+          className="mt-2 inline-block text-xs tracking-[0.25em] uppercase text-gray-400 hover:text-white"
+        >
           Details →
-        </p>
+        </Link>
       </div>
     </div>
-  )
+  );
 }
