@@ -1,9 +1,10 @@
 import React from 'react'
+import Home from '../../components/Home/Home'
 
 const page = () => {
   return (
-    <div className='mt-40'>
-      Home
+    <div>
+      <Home/>
     </div>
   )
 }
