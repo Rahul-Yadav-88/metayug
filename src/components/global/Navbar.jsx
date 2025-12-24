@@ -53,7 +53,7 @@ export default function Navbar() {
               ))}
             </ul>
 
-            <Link href={'/Contact'} className="px-6 py-2 bg-[#9c8f7a] text-black text-sm uppercase tracking-widest hover:bg-white transition">
+            <Link href={'/contact'} className="px-6 py-2 bg-[#9c8f7a] text-black text-sm uppercase tracking-widest hover:bg-white transition">
               Book a Call
             </Link>
           </div>
@@ -95,9 +95,9 @@ export default function Navbar() {
             </a>
           ))}
 
-          <button className="mt-6 px-8 py-3 bg-[#9c8f7a] text-black text-sm uppercase tracking-widest">
+          <Link href={'/contact'} className="mt-6 px-8 py-3 bg-[#9c8f7a] text-black text-sm uppercase tracking-widest">
             Book a Call
-          </button>
+          </Link>
         </div>
       </div>
     </>
