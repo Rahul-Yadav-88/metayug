@@ -2,6 +2,7 @@
 
 import Image from "next/image"
 import Link from "next/link"
+import { blogs } from "../Blog/blog"
 
 
 const posts = [
@@ -151,7 +152,7 @@ export default function BlogPage() {
                 </h2>
 
                 <Link
-                  href={`/posts/${post.slug}`}
+                  href={`/Blog/${post.slug}`}
                   className="mt-auto text-xs uppercase tracking-[0.2em] text-stone-400 transition-colors hover:text-stone-200"
                 >
                   Learn More
