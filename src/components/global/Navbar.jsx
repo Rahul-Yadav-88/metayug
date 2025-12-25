@@ -8,7 +8,7 @@ const navLinks = [
   { name: "Home", href: "/" },
   { name: "Portfolio", href: "/Projects" },
   { name: "Services", href: "#" },
-  { name: "About", href: "#" },
+  { name: "About", href: "/About" },
   { name: "Blog", href: "/Blog" },
 ]
 
@@ -53,7 +53,7 @@ export default function Navbar() {
               ))}
             </ul>
 
-            <Link href={'/contact'} className="px-6 py-2 bg-[#9c8f7a] text-black text-sm uppercase tracking-widest hover:bg-white transition">
+            <Link href={'/Contact'} className="px-6 py-2 bg-[#9c8f7a] text-black text-sm uppercase tracking-widest hover:bg-white transition">
               Book a Call
             </Link>
           </div>

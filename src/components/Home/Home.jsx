@@ -1,57 +1,88 @@
 import Image from "next/image";
-
+import Crou from "../../components/Home/Crousel.jsx";
 export default function Home() {
   return (
-    <main className="bg-black text-white overflow-hidden">
+    <main className="bg-[#1c1c1c] text-white overflow-hidden">
 
-      {/* ==================================================
-         HERO
-         ================================================== */}
-      <section className="relative min-h-screen flex items-center justify-center text-center">
-        <Image
-          src="/Hero_bg.jpg"
-          alt="Luxury interior"
-          fill
-          priority
-          className="object-cover opacity-40"
+      {/* section 1 - hero */}
+      <section className="relative w-full h-[50vh] sm:h-[60vh] md:h-[70vh] lg:h-[84vh] overflow-hidden">
+
+
+        <img
+          src="Hero_bg.jpg"
+          alt="Kitchen interior"
+          className="absolute inset-0 w-full h-full object-cover"
         />
-        <div className="relative z-10 max-w-3xl px-6">
-          <h1 className="font-serif text-4xl md:text-6xl mb-8">
-            Luxury Interior Design <br /> Tailored for You.
-          </h1>
-          <button className="bg-[#b6a68a] text-black px-8 py-3 text-xs tracking-widest uppercase">
-            Our Services
-          </button>
+
+
+        <div className="absolute inset-0 flex items-center justify-center px-4">
+          <div className="relative flex items-center justify-center">
+
+
+            <div
+              className="
+                absolute 
+                w-[220px] h-[90px]
+                sm:w-[300px] sm:h-[120px]
+                md:w-[380px] md:h-[150px]
+                lg:w-[450px] lg:h-[170px]
+                bg-white/80 
+                blur-[50px] 
+                rounded-full
+              "
+            ></div>
+
+
+            <h1
+              className="
+    relative
+    text-center
+    mx-auto
+    text-xl
+    sm:text-3xl
+    md:text-4xl
+    lg:text-5xl
+    font-serif
+    text-gray-900
+    tracking-[0.25em]
+    sm:tracking-[0.3em]
+    px-6
+    sm:px-10
+  "
+            >
+              Luxury Interior Design <br /> Tailored for You.
+            </h1>
+
+
+          </div>
         </div>
+      </section>
+
+      {/* section 2 */}
+      <section className="bg-[#212121] text-[#E5E5E5] px-4 py-6 sm:py-8">
+        <ul
+          className="flex flex-wrap justify-around gap-x-6 gap-y-4 text-sm sm:text-base md:text-xl lg:text-2xl tracking-widest"
+        >
+          <li>LUXURY</li>
+          <li>CRAFTSMANSHIP</li>
+          <li>ELEGANCE</li>
+          <li>OPULENCE</li>
+          <li>MAJESTIC</li>
+        </ul>
       </section>
 
       {/* ==================================================
          ABOUT SHOWCASE
          ================================================== */}
-      <section className="relative min-h-[200svh] flex items-center justify-center">
-        <Image
-          src="/About_ShowCase.jpg"
-          alt="Showcase"
-          fill
-          className="object-cover opacity-25"
-        />
-        <div className="relative z-10 max-w-5xl px-6 text-center">
-          <p className="font-serif text-2xl leading-relaxed mb-24">
-            We are a high end interior design studio that specializes in
-            transforming interiors into majestic & captivating spaces.
+      <section className="relative min-h-screen flex items-center justify-center py-20">
+        <Image src="/About_ShowCase.jpg" alt="Showcase" fill className="object-cover opacity-25" />
+        <div className="relative z-10 w-full max-w-5xl px-6">
+          <p className="font-serif text-2xl leading-relaxed mb-24 text-center">
+            We are a high end interior design studio that specializes in transforming interiors into majestic &
+            captivating spaces.
           </p>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {[
-              "/About_showCase_Card.jpg",
-              "/Hero_bg.jpg",
-              "/Post_3.jpg",
-            ].map((img, i) => (
-              <div key={i} className="relative h-80">
-                <Image src={img} alt="" fill className="object-cover" />
-              </div>
-            ))}
-          </div>
+          <Crou />
         </div>
       </section>
 
@@ -91,7 +122,7 @@ export default function Home() {
       {/* ==================================================
          TESTIMONIAL
          ================================================== */}
-      <section className="py-40 bg-[#4a4a4a] text-center">
+      <section className="py-20 bg-[#4a4a4a] text-center">
         <p className="text-6xl mb-8">“</p>
         <p className="font-serif text-xl max-w-3xl mx-auto mb-10">
           It was a pleasure working with Katie. We are a high-end interior design
@@ -148,7 +179,7 @@ export default function Home() {
               "Color Palettes for Interiors: The Guide",
               "Small Touches That Make an Impact in Design.",
             ].map((title, i) => (
-              <div key={i} className="border border-gray-700 p-6 text-center">
+              <div key={i} className="border border-gray-700 bg-black p-6 text-center">
                 <div className="relative aspect-[4/5] mb-8">
                   <Image
                     src="/Hero_bg.jpg"
@@ -166,71 +197,11 @@ export default function Home() {
           </div>
         </div>
 
-        <div className="text-center pt-40 pb-32">
-          <h3 className="font-serif text-3xl mb-10">
-            Let Us Help Transform Your Living <br /> Space into A Masterpiece.
-          </h3>
-          <button className="bg-[#b6a68a] text-black px-8 py-3 text-xs uppercase">
-            Start Your Journey
-          </button>
-        </div>
-      </section>
-
-      {/* ==================================================
-         FOOTER + IMAGE STRIP
-         ================================================== */}
-      <section className="relative min-h-screen flex flex-col justify-end">
-
-        {/* Footer content */}
-        <div className="flex-1 flex flex-col items-center justify-center text-center px-6">
-          <button className="bg-[#b6a68a] text-black px-8 py-3 text-xs uppercase mb-24">
-            Start Your Journey
-          </button>
-
-          <div className="grid md:grid-cols-3 gap-20 max-w-6xl w-full">
-            <div>
-              <h2 className="text-3xl font-serif text-[#b6a68a]">V</h2>
-              <p className="italic text-sm text-gray-400">Interiors</p>
-            </div>
-
-            <div>
-              <h4 className="font-serif text-sm mb-6">Navigation</h4>
-              <ul className="space-y-3 text-xs tracking-widest uppercase text-gray-400">
-                <li>Home</li>
-                <li>Portfolio</li>
-                <li>Services</li>
-                <li>About</li>
-                <li>Blog</li>
-                <li>Contact</li>
-              </ul>
-            </div>
-
-            <div className="text-xs text-gray-400">
-              <p>info@velainteriorsabc</p>
-              <p>123 Peachtree Lane</p>
-              <p>Suite 400, Atlanta, GA 30309</p>
-            </div>
-          </div>
-        </div>
-
-        {/* Image strip with half white bg */}
-        <div className="relative">
-          <div className="absolute bottom-0 w-full h-1/2 bg-[#ded8d1]" />
-          <div className="relative z-10 grid grid-cols-4 gap-6 px-6 py-16">
-            {[
-              "/About_showCase_Card.jpg",
-              "/Hero_bg.jpg",
-              "/Post_3.jpg",
-              "/Hero_bg.jpg",
-            ].map((img, i) => (
-              <div key={i} className="relative h-56">
-                <Image src={img} alt="" fill className="object-cover" />
-              </div>
-            ))}
-          </div>
-        </div>
 
       </section>
+
+
+
 
     </main>
   );

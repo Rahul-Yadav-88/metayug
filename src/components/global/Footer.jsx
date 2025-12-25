@@ -4,136 +4,70 @@ import { Instagram, Facebook } from "lucide-react"
 
 export default function Footer() {
   return (
-    <footer className="bg-[#1a1a1a] text-white">
-      {/* CTA Section */}
-      <div className="flex flex-col items-center justify-center px-6 py-16 md:py-24">
-        <h2 className="text-center font-serif text-3xl md:text-4xl lg:text-5xl text-[#c4c4c4] leading-tight max-w-3xl text-balance">
-          Let Us Help Transform Your Living Space into A Masterpiece.
-        </h2>
-        <button className="mt-8 bg-[#a89b8f] px-8 py-3 text-sm font-medium tracking-wide text-white hover:bg-[#988c80] transition-colors">
-          START YOUR JOURNEY
-        </button>
-      </div>
+    <footer className="bg-[#1c1c1c]">
+      {/* ==================================================
+         FOOTER + IMAGE STRIP
+         ================================================== */}
+      <section className="relative min-h-screen flex flex-col justify-end">
 
-      {/* Main Footer Content */}
-      <div className=" px-6 py-12">
-        <div className="mx-auto max-w-7xl">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-12 md:gap-8 items-start">
-            {/* Logo Section */}
-            <div className="flex justify-center items-center">
-      <Image
-        src="/b2.png"   // put your logo inside /public folder
-        alt="V Interiors Logo"
-        width={120}
-        height={120}
-        className="object-contain"
-        priority
-      />
-    </div>
 
-            {/* Navigation Section */}
-            <div className="text-center">
-              <h3 className="font-serif text-xl mb-6 relative inline-block">
-                Navigation
-                <span className="absolute bottom-0 left-0 w-full h-[1px] bg-white/30"></span>
-              </h3>
-              <nav className="flex flex-col gap-3">
-                <Link href="/" className="text-[#c4c4c4] hover:text-white transition-colors text-sm">
-                  HOME
-                </Link>
-                <Link href="/portfolio" className="text-[#c4c4c4] hover:text-white transition-colors text-sm">
-                  PORTFOLIO
-                </Link>
-                <Link href="/services" className="text-[#c4c4c4] hover:text-white transition-colors text-sm">
-                  SERVICES
-                </Link>
-                <Link href="/about" className="text-[#c4c4c4] hover:text-white transition-colors text-sm">
-                  ABOUT
-                </Link>
-                <Link href="/blog" className="text-[#c4c4c4] hover:text-white transition-colors text-sm">
-                  BLOG
-                </Link>
-                <Link href="/contact" className="text-[#c4c4c4] hover:text-white transition-colors text-sm">
-                  CONTACT
-                </Link>
-              </nav>
+        {/* Footer content */}
+        <div className="text-center pt-40 pb-32">
+          <h3 className="font-serif text-white text-3xl mb-6">
+            Let Us Help Transform Your Living <br /> Space into A Masterpiece.
+          </h3>
+          
+        </div>
+        <div className="flex-1 flex flex-col items-center justify-center text-center px-6">
+          <button className="bg-[#b6a68a] text-black px-8 py-3 text-xs uppercase mb-24">
+            Start Your Journey
+          </button>
+
+          <div className="grid md:grid-cols-3 gap-20 max-w-6xl w-full">
+            <div>
+              <h2 className="text-3xl font-serif text-[#b6a68a]">V</h2>
+              <p className="italic text-sm text-gray-400">Interiors</p>
             </div>
 
-            {/* Contact Section */}
-            <div className="text-center md:text-right">
-              <div className="space-y-3">
-                <a
-                  href="mailto:INFO@VBELANINTERIORS.ABC"
-                  className="block text-[#c4c4c4] hover:text-white transition-colors text-sm"
-                >
-                  INFO@VBELANINTERIORS.ABC
-                </a>
-                <div className="text-[#c4c4c4] text-sm">
-                  <div className="font-serif text-base mb-1">123 Peachtree Lane,</div>
-                  <div>Suite 100, Atlanta GA 30309</div>
-                </div>
-                <div className="flex gap-3 justify-center md:justify-end pt-2">
-                  <a
-                    href="https://instagram.com"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-[#c4c4c4] hover:text-white transition-colors"
-                    aria-label="Instagram"
-                  >
-                    <Instagram className="w-5 h-5" />
-                  </a>
-                  <a
-                    href="https://facebook.com"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-[#c4c4c4] hover:text-white transition-colors"
-                    aria-label="Facebook"
-                  >
-                    <Facebook className="w-5 h-5" />
-                  </a>
-                  <a
-                    href="https://pinterest.com"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-[#c4c4c4] hover:text-white transition-colors"
-                    aria-label="Pinterest"
-                  >
-                    <svg className="w-5 h-5" viewBox="0 0 24 24" fill="currentColor">
-                      <path d="M12 0C5.373 0 0 5.372 0 12c0 5.084 3.163 9.426 7.627 11.174-.105-.949-.2-2.405.042-3.441.218-.937 1.407-5.965 1.407-5.965s-.359-.719-.359-1.782c0-1.668.967-2.914 2.171-2.914 1.023 0 1.518.769 1.518 1.69 0 1.029-.655 2.568-.994 3.995-.283 1.194.599 2.169 1.777 2.169 2.133 0 3.772-2.249 3.772-5.495 0-2.873-2.064-4.882-5.012-4.882-3.414 0-5.418 2.561-5.418 5.207 0 1.031.397 2.138.893 2.738.098.119.112.224.083.345l-.333 1.36c-.053.22-.174.267-.402.161-1.499-.698-2.436-2.889-2.436-4.649 0-3.785 2.75-7.262 7.929-7.262 4.163 0 7.398 2.967 7.398 6.931 0 4.136-2.607 7.464-6.227 7.464-1.216 0-2.359-.631-2.75-1.378l-.748 2.853c-.271 1.043-1.002 2.35-1.492 3.146C9.57 23.812 10.763 24 12 24c6.627 0 12-5.373 12-12 0-6.628-5.373-12-12-12z" />
-                    </svg>
-                  </a>
-                </div>
-              </div>
+            <div className="text-gray-400">
+              <h4 className="font-dubiel text-3xl italic mb-6">Navigation</h4>
+              <ul className="space-y-3 text-xs tracking-widest uppercase ">
+                <li>Home</li>
+                <li>Portfolio</li>
+                <li>Services</li>
+                <li>About</li>
+                <li>Blog</li>
+                <li>Contact</li>
+              </ul>
+            </div>
+
+            <div className="text-lg text-gray-400">
+              <p>info@velainteriorsabc</p>
+              <p>123 Peachtree Lane</p>
+              <p>Suite 400, Atlanta, GA 30309</p>
             </div>
           </div>
         </div>
-      </div>
 
-      {/* Image Gallery */}
-      <div className="grid grid-cols-2 md:grid-cols-4 gap-6 px-14 pb-6">
-        <div className="relative aspect-square overflow-hidden">
-          <Image
-            src="/b1.png"
-            alt="Elegant living room with bay windows"
-            fill
-            className="object-cover"
-          />
+        {/* Image strip with half white bg */}
+        <div className="relative">
+          <div className="absolute bottom-0 w-full h-28 bg-[#ded8d1]" />
+          <div className="relative z-10 grid grid-cols-4 gap-10 px-20 py-14">
+            {[
+              "/About_showCase_Card.jpg",
+              "/Hero_bg.jpg",
+              "/Post_3.jpg",
+              "/Hero_bg.jpg",
+            ].map((img, i) => (
+              <div key={i} className="relative h-56">
+                <Image src={img} alt="" fill className="object-cover" />
+              </div>
+            ))}
+          </div>
         </div>
-        <div className="relative aspect-square overflow-hidden">
-          <Image
-            src="/b1.png"
-            alt="Luxury bedroom with elegant armchairs"
-            fill
-            className="object-cover"
-          />
-        </div>
-        <div className="relative aspect-square overflow-hidden">
-          <Image src="/b1.png" alt="Sophisticated hallway" fill className="object-cover" />
-        </div>
-        <div className="relative aspect-square overflow-hidden">
-          <Image src="/b1.png" alt="Elegant living space" fill className="object-cover" />
-        </div>
-      </div>
-    </footer>
+
+      </section>
+      </footer>
+
   )
 }

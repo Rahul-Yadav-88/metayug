@@ -52,7 +52,7 @@ const features = [
 
   return (
     <div className='min-h-screen bg-[#1C1C1C]'>
-                 <section className="relative w-full h-[50vh] sm:h-[60vh] md:h-[70vh] lg:h-[80vh] overflow-hidden">
+                 <section className="relative w-full h-[50vh] sm:h-[60vh] md:h-[70vh] lg:h-[84vh] overflow-hidden">
 
 
                 <img
