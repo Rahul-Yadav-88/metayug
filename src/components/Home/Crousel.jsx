@@ -6,17 +6,17 @@ import { ChevronLeft, ChevronRight } from "lucide-react"
 const CAROUSEL_ITEMS = [
   {
     id: 1,
-    image: "/Testimonial_1.jpg",
+    image: "/f2.png",
     alt: "Luxury interior with warm lighting",
   },
   {
     id: 2,
-    image: "/b4.png",
+    image: "/f5.png",
     alt: "Elegant living room with furniture",
   },
   {
     id: 3,
-    image: "/b3.png",
+    image: "/f4.png",
     alt: "Sophisticated interior with patterns",
   },
 ]
@@ -45,7 +45,7 @@ export function InteriorCarousel() {
   }
 
   return (
-    <div className="relative mb-8">
+    <div className="relative">
       <div className="flex items-center justify-center gap-6 md:gap-12">
         {/* Left Arrow */}
         <button

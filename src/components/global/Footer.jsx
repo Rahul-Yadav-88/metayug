@@ -12,14 +12,14 @@ export default function Footer() {
 
 
         {/* Footer content */}
-        <div className="text-center pt-40 pb-32">
+        <div className="text-center pt-20 pb-10">
           <h3 className="font-serif text-white text-3xl mb-6">
             Let Us Help Transform Your Living <br /> Space into A Masterpiece.
           </h3>
           
         </div>
         <div className="flex-1 flex flex-col items-center justify-center text-center px-6">
-          <button className="bg-[#b6a68a] text-black px-8 py-3 text-xs uppercase mb-24">
+          <button className="bg-[#b6a68a] text-black px-8 py-3 text-xs uppercase mb-12">
             Start Your Journey
           </button>
 

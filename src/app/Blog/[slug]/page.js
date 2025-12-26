@@ -134,10 +134,10 @@ export default function BlogDetailPage() {
 
     {/* Intro Paragraph */}
  <p className="text-sm sm:text-base text-gray-300 leading-relaxed">
-  {post.paragraphs.slice(0, 2).join(" ")}
+  {post?.paragraphs?.slice(0, 2).join(" ") || ""}
   <br />
   <br />
-  {post.paragraphs.slice(2).join(" ")}
+  {post?.paragraphs?.slice(2).join(" ") || ""}
 </p>
 
 

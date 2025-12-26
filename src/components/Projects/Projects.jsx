@@ -1,6 +1,8 @@
+"use client";
+
 import { ArrowRight } from 'lucide-react'
 import Link from 'next/link';
-import React from 'react'
+import { useEffect, useState } from "react";
 
 const Projects = () => {
 const projects = [
@@ -32,6 +34,29 @@ const projects = [
 ];
 
 
+
+const approaches = [
+  {
+    title: "Concept Driven Design",
+    description:
+      "Every project begins with a strong conceptual foundation. We translate ideas into architectural expressions that reflect clarity, purpose, and refined aesthetics.",
+    bg: "/f1.png",
+  },
+  {
+    title: "Material & Detail Focus",
+    description:
+      "We carefully curate materials, textures, and finishes to achieve balance and longevity, ensuring each design ages with elegance.",
+    bg: "/f2.png",
+  },
+  {
+    title: "Contextual Harmony",
+    description:
+      "Our designs respond thoughtfully to their surroundings—blending scale, proportion, and environment to create timeless architectural harmony.",
+    bg: "/f3.png",
+  },
+];
+
+
 const features = [
   {
     title: "Exclusive",
@@ -49,8 +74,17 @@ const features = [
       "Each project combines innovative design with cutting-edge materials to push creative boundaries.",
   },
 ];
+  const [active, setActive] = useState(0);
+   useEffect(() => {
+    const interval = setInterval(() => {
+      setActive((prev) => (prev + 1) % approaches.length);
+    }, 3000);
+
+    return () => clearInterval(interval);
+  }, []);
 
   return (
+
     <div className='min-h-screen bg-[#1C1C1C]'>
                  <section className="relative w-full h-[50vh] sm:h-[60vh] md:h-[70vh] lg:h-[84vh] overflow-hidden">
 
@@ -115,6 +149,105 @@ const features = [
   </ul>
 </section>
 
+
+
+{/* Project Highlights – New UI */}
+<section className="bg-[#212121] py-20">
+  <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-12 px-6">
+
+    {[
+      { value: "120+", label: "Projects Completed" },
+      { value: "10+", label: "Years of Excellence" },
+      { value: "15+", label: "Design Awards" },
+      { value: "100%", label: "Client Satisfaction" },
+    ].map((item, index) => (
+      <div key={index} className="text-center">
+        <h3 className="text-4xl md:text-5xl font-serif text-[#9f9280]">
+          {item.value}
+        </h3>
+        <p className="text-xs tracking-widest uppercase text-gray-400 mt-3">
+          {item.label}
+        </p>
+      </div>
+    ))}
+
+  </div>
+</section>
+
+
+
+
+{/* Project Philosophy – BG Image */}
+ <section className="relative h-[85vh] overflow-hidden flex items-center">
+      
+      {/* Background Images */}
+      {approaches.map((item, index) => (
+        <img
+          key={index}
+          src={item.bg}
+          alt={item.title}
+          className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-1000
+            ${active === index ? "opacity-100" : "opacity-0"}
+          `}
+        />
+      ))}
+
+      {/* Dark Overlay */}
+      <div className="absolute inset-0 bg-black/70" />
+
+      {/* Content */}
+      <div className="relative z-10 max-w-7xl mx-auto w-full px-6 grid grid-cols-1 md:grid-cols-12 gap-16 items-center">
+
+        {/* Left Heading */}
+        <div className="md:col-span-4">
+          <p className="text-[11px] tracking-[0.35em] text-gray-400 uppercase mb-6">
+            Our Approach
+          </p>
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-serif text-white leading-snug">
+            How We <br /> Design Spaces
+          </h2>
+        </div>
+
+        {/* Slide Content */}
+        <div className="md:col-span-6 relative min-h-[200px]">
+          {approaches.map((item, index) => (
+            <div
+              key={index}
+              className={`absolute transition-all duration-700 ease-in-out
+                ${
+                  index === active
+                    ? "opacity-100 translate-y-0"
+                    : "opacity-0 translate-y-6 pointer-events-none"
+                }
+              `}
+            >
+              <h3 className="text-2xl md:text-3xl font-serif text-white mb-6">
+                {item.title}
+              </h3>
+              <p className="text-gray-300 text-sm md:text-base leading-relaxed max-w-xl">
+                {item.description}
+              </p>
+            </div>
+          ))}
+        </div>
+
+        {/* Vertical Indicators */}
+        <div className="md:col-span-2 flex md:flex-col gap-4 justify-center md:justify-start">
+          {approaches.map((_, index) => (
+            <button
+              key={index}
+              onClick={() => setActive(index)}
+              className={`w-[2px] h-12 transition-all duration-300
+                ${active === index ? "bg-[#9f9280]" : "bg-white/30"}
+              `}
+            />
+          ))}
+        </div>
+
+      </div>
+    </section>
+
+
 {/* section 3 */}
 <section className="mt-20">
   <div className="text-white flex flex-col items-center gap-10">
@@ -174,15 +307,7 @@ const features = [
 </section>
 
 
-{/* <section className='mt-20'>
-  <div className='flex justify-center'>
-    <div className=' w-[80%] text-white space-y-3'>
-    <img src="projects-img7.png" alt="" className='w-full min-h-[200px]'/>
-    <p className='text-lg md:text-xl'>Exquisite Marble Bathroom</p>
-    <button className='flex items-center gap-2'>Details <ArrowRight size={20}/></button>
-  </div>
-  </div>
-</section> */}
+
 
  <section className="bg-[#1b1b1b] text-[#e5e5e5] py-16 px-6 md:px-12">
       <div className="max-w-[85%] mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
@@ -208,20 +333,38 @@ const features = [
       </div>
     </section>
 
-        <section className="bg-[#1b1b1b] min-h-[60vh] flex items-center justify-center px-6">
-      <div className="text-center max-w-4xl">
-        {/* Heading */}
-        <h2 className="text-[#f5f5f5] font-serif text-2xl sm:text-3xl md:text-4xl lg:text-5xl leading-relaxed mb-10">
-          Let Us Help Transform Your Living <br className="hidden sm:block" />
-          Space into A Masterpiece.
-        </h2>
+       {/* Materials & Craftsmanship – New UI */}
+<section className="relative bg-black py-14 px-6">
+  <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-0">
 
-        {/* Button */}
-        <button className="bg-[#9f9280] text-white px-8 py-3 text-sm md:text-base tracking-widest uppercase hover:bg-[#b3a693] transition-all duration-300">
-          Start Your Journey
-        </button>
+    {/* Image */}
+    <div className="h-[520px]">
+      <img
+        src="/f1.png"
+        alt="Craftsmanship"
+        className="w-full h-full object-cover"
+      />
+    </div>
+
+    {/* Text Panel */}
+    <div className="bg-[#1c1c1c] flex items-center px-12">
+      <div>
+       
+        <h1 className="text-2xl md:text-3xl font-serif text-gray-200 mb-8">
+          Materials That Endure
+        </h1>
+
+        <p className="text-gray-400 text-sm md:text-base leading-relaxed">
+          From stone and wood to glass and metal, every material is selected
+          with precision. Our craftsmanship ensures durability, refinement,
+          and timeless architectural expression.
+        </p>
       </div>
-    </section>
+    </div>
+
+  </div>
+</section>
+
       
     </div>
   )
