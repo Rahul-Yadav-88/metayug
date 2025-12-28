@@ -24,7 +24,7 @@ export default function Home() {
         imageSrc="/h4.webp"
         title="Facade and luxury interior design—tailored exclusively for you."
         subtitle="We create interiors that inspire, comfort, and elevate everyday living."
-        buttonText="Explore"
+        buttonText="Explore ."
         buttonAction={() => console.log("Home Hero Button Clicked")}
           showButton={true}
 
