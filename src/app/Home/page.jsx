@@ -56,7 +56,7 @@ export default function Home() {
 
       {/* SERVICES */}
       <ServicesSection
-        imageSrc="/f7.png"
+        imageSrc="/f7.webp"
         category="Classic"
         title="Facade Design Services\nAnd Much More..."
         description="We craft timeless, elegant facades with precision and style."

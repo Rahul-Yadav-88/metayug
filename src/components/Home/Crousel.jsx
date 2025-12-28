@@ -6,17 +6,17 @@ import { ChevronLeft, ChevronRight } from "lucide-react"
 const CAROUSEL_ITEMS = [
   {
     id: 1,
-    image: "/f2.png",
+    image: "/f2.webp",
     alt: "Luxury interior with warm lighting",
   },
   {
     id: 2,
-    image: "/f5.png",
+    image: "/f5.webp",
     alt: "Elegant living room with furniture",
   },
   {
     id: 3,
-    image: "/f4.png",
+    image: "/f4.webp",
     alt: "Sophisticated interior with patterns",
   },
 ]

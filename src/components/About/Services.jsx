@@ -7,9 +7,9 @@ export default function ServicesSection({
   subtitle = "Services",
   title = "What We Do",
   services = [
-    { title: "Residential Facades", img: "/f1.png" },
-    { title: "Commercial Elevations", img: "/f2.png" },
-    { title: "Exterior Renovation", img: "/f3.png" },
+    { title: "Residential Facades", img: "/f1.webp" },
+    { title: "Commercial Elevations", img: "/f2.webp" },
+    { title: "Exterior Renovation", img: "/f3.webp" },
   ],
 }) {
   return (
