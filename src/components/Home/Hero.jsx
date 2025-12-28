@@ -3,14 +3,16 @@
 import { motion, useMotionValue, useTransform } from "framer-motion";
 
 export default function HeroSection({
-  imageSrc = "/h4.webp", // default image
+  imageSrc = "/h4.webp",
   title = "Default Hero Title",
   subtitle = "",
   buttonText = "Explore",
   buttonAction = () => {},
+  showButton = true, // 🔥 NEW PROP
 }) {
   const x = useMotionValue(0);
   const y = useMotionValue(0);
+
   const rotateX = useTransform(y, [-100, 100], [15, -15]);
   const rotateY = useTransform(x, [-100, 100], [-15, 15]);
 
@@ -24,13 +26,18 @@ export default function HeroSection({
       className="relative h-[84vh] flex items-center justify-center overflow-hidden perspective-1000"
       onMouseMove={handleMouseMove}
     >
+      {/* Background Image */}
       <motion.img
         src={imageSrc}
         alt={title}
         className="absolute inset-0 w-full h-full object-cover"
         style={{ rotateX, rotateY }}
       />
+
+      {/* Overlay */}
       <div className="absolute inset-0 bg-black/65" />
+
+      {/* Content */}
       <motion.div
         className="relative z-10 max-w-4xl text-center px-6"
         style={{ rotateX, rotateY }}
@@ -38,8 +45,13 @@ export default function HeroSection({
         <h1 className="text-3xl md:text-4xl lg:text-5xl font-serif mb-4 leading-snug">
           {title}
         </h1>
-        {subtitle && <p className="text-gray-300 mb-6">{subtitle}</p>}
-        {buttonText && (
+
+        {subtitle && (
+          <p className="text-gray-300 mb-6">{subtitle}</p>
+        )}
+
+        {/* 🔥 Button controlled per page */}
+        {showButton && buttonText && (
           <motion.button
             whileHover={{ scale: 1.05 }}
             onClick={buttonAction}

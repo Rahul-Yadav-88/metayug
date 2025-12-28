@@ -1,307 +1,209 @@
+"use client";
+
 import React from "react";
+import { motion } from "framer-motion";
+import HeroSection from "../../components/Home/Hero.jsx";
+import KeywordsSection from "../../components/Home/Keyword.jsx";
+
+const floatAnimation = {
+  animate: {
+    y: [0, -20, 0],
+    rotateZ: [0, 1, -1, 0],
+  },
+  transition: {
+    duration: 8,
+    repeat: Infinity,
+    ease: "easeInOut",
+  },
+};
+
+const fade3D = {
+  hidden: { opacity: 0, y: 80, rotateX: 20 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    rotateX: 0,
+    transition: { duration: 1, ease: "easeOut" },
+  },
+};
 
 const Contact = () => {
-    const faqData = [
-  {
-    id: "01",
-    title: "WHAT SERVICES DO YOU OFFER?",
-    description:
-      "We provide residential and commercial interior design, including space planning, furniture selection, and custom design solutions. Our services also include project management and renovation design.",
-  },
-  {
-    id: "02",
-    title: "How do I start a project with your studio?",
-    description:
-      "We provide residential and commercial interior design, including space planning, furniture selection, and custom design solutions. Our services also include project management and renovation design.",
-  },
-  {
-    id: "03",
-    title: "How do I start a project with your studio?",
-    description:
-      "We provide residential and commercial interior design, including space planning, furniture selection, and custom design solutions. Our services also include project management and renovation design.",
-  },
-];
-    const faqData2 = [
-  {
-    id: "01",
-    title: "WHAT SERVICES DO YOU OFFER?",
-    description:
-      "We provide residential and commercial interior design, including space planning, furniture selection, and custom design solutions. Our services also include project management and renovation design.",
-  },
-  {
-    id: "02",
-    title: "HOW DO I START A PROJECT WITH YOUR STUDIO?",
-    description:
-      "You can start by contacting us through our website or visiting our studio. We discuss your requirements, budget, and timeline before creating a customized design plan.",
-  },
-  {
-    id: "03",
-    title: "HOW LONG DOES A PROJECT TAKE?",
-    description:
-      "Project timelines vary depending on scope and complexity. Typically, projects range from a few weeks to several months, including design and execution.",
-  },
-];
+  const faqData = [
+    {
+      id: "01",
+      title: "WHAT SERVICES DO YOU OFFER?",
+      description:
+        "We provide residential and commercial interior design, including space planning, furniture selection, and custom design solutions.",
+    },
+    {
+      id: "02",
+      title: "HOW DO I START A PROJECT?",
+      description:
+        "Contact us via our website or studio visit. We understand your goals, budget, and timeline.",
+    },
+    {
+      id: "03",
+      title: "DO YOU OFFER CUSTOM DESIGNS?",
+      description:
+        "Yes, every design is tailor-made based on your space, taste, and requirements.",
+    },
+  ];
 
-    return (
-        <div className="min-h-screen bg-[#1C1C1C]">
+  const faqData2 = [
+    {
+      id: "01",
+      title: "HOW LONG DOES A PROJECT TAKE?",
+      description:
+        "Depending on complexity, projects typically range from a few weeks to several months.",
+    },
+    {
+      id: "02",
+      title: "DO YOU HANDLE RENOVATIONS?",
+      description:
+        "Yes, we offer complete renovation management from design to execution.",
+    },
+    {
+      id: "03",
+      title: "WHAT IS YOUR DESIGN PROCESS?",
+      description:
+        "We follow a structured approach: discovery, concept, design, execution, and delivery.",
+    },
+  ];
 
-            <section className="relative w-full h-[50vh] sm:h-[60vh] md:h-[70vh] lg:h-[80vh] overflow-hidden">
+  return (
+    <div className="min-h-screen bg-[#1C1C1C] overflow-hidden">
 
+      {/* HERO */}
+      <HeroSection imageSrc="/h4.webp" title="Contact Us." showButton={false} />
 
-                <img
-                    src="contact-hero.png"
-                    alt="Kitchen interior"
-                    className="absolute inset-0 w-full h-full object-cover"
-                />
+      {/* KEYWORDS */}
+      <KeywordsSection
+        keywords={["LUXURY", "CRAFTSMANSHIP", "ELEGANCE", "OPULENCE", "MAJESTIC"]}
+      />
 
-
-                <div className="absolute inset-0 flex items-center justify-center px-4">
-                    <div className="relative flex items-center justify-center">
-
-
-                        <div
-                            className="
-                absolute 
-                w-[220px] h-[90px]
-                sm:w-[300px] sm:h-[120px]
-                md:w-[380px] md:h-[150px]
-                lg:w-[450px] lg:h-[170px]
-                bg-white/80 
-                blur-[50px] 
-                rounded-full
-              "
-                        ></div>
-
-                       
-                        <h1
-                            className="
-                relative 
-                text-3xl
-                sm:text-4xl
-                md:text-6xl
-                lg:text-7xl
-                font-serif 
-                text-gray-900 
-                tracking-[0.25em]
-                sm:tracking-[0.3em]
-                px-6
-                sm:px-10
-              "
-                        >
-                            CONTACT
-                        </h1>
-
-                    </div>
-                </div>
-            </section>
-
-            {/* section 2 */}
-         <section className="bg-[#212121] text-[#E5E5E5] px-4 py-6 sm:py-8">
-  <ul
-    className="flex flex-wrap justify-around gap-x-6 gap-y-4 text-sm sm:text-base md:text-xl lg:text-2xl tracking-widest"
-  >
-    <li>LUXURY</li>
-    <li>CRAFTSMANSHIP</li>
-    <li>ELEGANCE</li>
-    <li>OPULENCE</li>
-    <li>MAJESTIC</li>
-  </ul>
-</section>
-
- {/* section 3 */}
- <section className=" mt-10">
+      {/* CONTACT FORM */}
+      <section className="mt-16 perspective-[1600px]">
         <div className="flex flex-col md:flex-row">
-          {/* Form Side */}
-          <div className="w-full md:w-1/2 px-6 sm:px-10 md:px-16 lg:px-20 py-12 sm:py-16 md:py-20 lg:py-24">
-            <h2 className="text-white text-3xl sm:text-4xl md:text-4xl lg:text-5xl font-serif mb-8  md:mb-20 leading-tight">
-              We Are Ready to Help You<br />
+
+          {/* FORM */}
+          <motion.div
+            variants={fade3D}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            className="w-full md:w-1/2 px-10 py-20"
+          >
+            <h2 className="text-white text-4xl md:text-5xl font-serif mb-20 leading-tight">
+              We Are Ready to Help You
+              <br />
               Elevate Your Space
             </h2>
 
-            <form className="space-y-4 sm:space-y-5 md:space-y-6">
-              <input
-                type="text"
-                placeholder="YOUR NAME"
-                className="w-full bg-[#C7C7C7] text-gray-800 placeholder-gray-500 px-4 sm:px-5 py-3 sm:py-4 text-sm sm:text-base tracking-wider focus:outline-none  "
-              />
-
-              <input
-                type="email"
-                placeholder="EMAIL ADDRESS"
-                className="w-full bg-[#C7C7C7] text-gray-800 placeholder-gray-500 px-4 sm:px-5 py-3 sm:py-4 text-sm sm:text-base tracking-wider focus:outline-none  "
-              />
-
-              <input
-                type="text"
-                placeholder="SERVICE INTERESTED IN"
-                className="w-full bg-[#C7C7C7] text-gray-800 placeholder-gray-500 px-4 sm:px-5 py-3 sm:py-4 text-sm sm:text-base tracking-wider focus:outline-none  "
-              />
+            <form className="space-y-6">
+              {["YOUR NAME", "EMAIL ADDRESS", "SERVICE INTERESTED IN"].map(
+                (item, i) => (
+                  <input
+                    key={i}
+                    placeholder={item}
+                    className="w-full bg-[#C7C7C7] px-5 py-4 tracking-widest focus:outline-none"
+                  />
+                )
+              )}
 
               <textarea
                 placeholder="WRITE YOUR MESSAGE HERE"
                 rows="6"
-                className="w-full bg-[#C7C7C7] text-gray-800 placeholder-gray-500 px-4 sm:px-5 py-3 sm:py-4 text-sm sm:text-base tracking-wider resize-none focus:outline-none "
-              ></textarea>
+                className="w-full bg-[#C7C7C7] px-5 py-4 tracking-widest resize-none focus:outline-none"
+              />
 
-              <button
-                type="submit"
-                className="bg-[#8D8271] text-white px-8 sm:px-10 py-3 sm:py-4 text-sm sm:text-base tracking-widest hover:bg-[#9d8166] transition-colors duration-300"
+              <motion.button
+                whileHover={{ scale: 1.05, rotateX: 10 }}
+                className="bg-[#8D8271] px-10 py-4 tracking-widest text-white"
               >
                 START YOUR JOURNEY
-              </button>
+              </motion.button>
             </form>
-          </div>
+          </motion.div>
 
-          {/* Image Side */}
-          <div className="w-full md:w-1/2 h-[400px] md:h-[800px] pr-4">
-            <img 
-              src="contact-form.png" 
-              alt="Modern interior space" 
+          {/* IMAGE */}
+          <motion.div
+            className="w-full md:w-1/2 h-[400px] md:h-[800px] pr-4"
+            {...floatAnimation}
+          >
+            <img
+              src="contact-form.png"
+              alt="Interior"
               className="w-full h-full object-cover"
             />
-          </div>
+          </motion.div>
         </div>
       </section>
 
-      {/* section 4 */}
-          <section className="">
-        <div className="max-w-7xl mx-auto px-6 sm:px-10 md:px-16 lg:px-20 py-12 sm:py-16 md:py-20">
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 sm:gap-10 md:gap-12 lg:gap-16">
-            
-            {/* Email & Phone */}
-            <div className="border-l border-white pl-6">
-              <h3 className="text-[#8D8271] text-xs sm:text-sm tracking-widest mb-4 sm:mb-6">
-                OUR EMAIL & PHONE
-              </h3>
-              <a 
-                href="mailto:info@velainteriors.com" 
-                className="text-white text-base sm:text-lg font-light hover:text-gray-300 transition-colors block mb-2"
+      {/* FAQ SECTION 1 */}
+      <section className="py-20 px-6 perspective-[1400px]">
+        <div className="max-w-[90%] mx-auto grid md:grid-cols-2 gap-16">
+
+          <div className="space-y-12">
+            {faqData.map((item) => (
+              <motion.div
+                key={item.id}
+                whileHover={{ rotateY: 8, y: -10 }}
+                className="border-l border-[#8D8271] pl-6"
               >
-                info@velainteriors.com
-              </a>
-              <a 
-                href="tel:001.404.507.1200" 
-                className="text-white text-base sm:text-lg font-light hover:text-gray-300 transition-colors block"
-              >
-                001.404.507.1200
-              </a>
-            </div>
-
-    
-            <div className="border-l border-white pl-6">
-              <h3 className="text-[#8D8271] text-xs sm:text-sm tracking-widest mb-4 sm:mb-6">
-                STUDIO ADDRESS
-              </h3>
-              <address className="text-white text-base sm:text-lg font-light not-italic leading-relaxed">
-                123 Peachtree Lane,<br />
-                Suite 100 Atlanta GA 30309
-              </address>
-            </div>
-
-    
-            <div className="border-l white pl-6">
-              <h3 className="text-[#8D8271] text-xs sm:text-sm tracking-widest mb-4 sm:mb-6">
-                STUDIO HOURS
-              </h3>
-              <p className="text-white text-base sm:text-lg font-light leading-relaxed">
-                Monday - Friday<br />
-                10am - 6pm
-              </p>
-            </div>
-
+                <p className="text-[#8D8271] text-xl">{item.id}.</p>
+                <h3 className="uppercase tracking-widest text-gray-300">
+                  {item.title}
+                </h3>
+                <p className="text-gray-400 mt-2 max-w-md">
+                  {item.description}
+                </p>
+              </motion.div>
+            ))}
           </div>
-        </div>
 
-        <div>
-            <img src="contact-img.png" alt="" className="w-full min-h-[300px] object-cover p-3"/>
+          <motion.div {...floatAnimation} className="flex justify-center">
+            <img
+              src="faq-img2.png"
+              className="w-[400px] h-[500px] object-cover"
+            />
+          </motion.div>
         </div>
       </section>
 
-      {/* section 5 */}
-       <section className="bg-[#1c1c1c] text-[#d6d6d6] py-10 md:py-16 px-4 md:px-12">
-         <div className="flex flex-col items-center mb-10 md:mb-20">
-      <p className="text-[#8D8271]">FAQ</p>
-      <h5 className="text-2xl md:text-4xl">Your Queries Answered</h5>
+      {/* FAQ SECTION 2 */}
+      <section className="py-20 px-6 perspective-[1400px]">
+        <div className="max-w-[90%] mx-auto grid md:grid-cols-2 gap-16">
+
+          <motion.div {...floatAnimation} className="flex justify-center">
+            <img
+              src="faq-img.png"
+              className="w-[400px] h-[500px] object-cover"
+            />
+          </motion.div>
+
+          <div className="space-y-12">
+            {faqData2.map((item) => (
+              <motion.div
+                key={item.id}
+                whileHover={{ rotateY: -8, y: -10 }}
+                className="border-l border-[#8D8271] pl-6"
+              >
+                <p className="text-[#8D8271] text-xl">{item.id}.</p>
+                <h3 className="uppercase tracking-widest text-gray-300">
+                  {item.title}
+                </h3>
+                <p className="text-gray-400 mt-2 max-w-md">
+                  {item.description}
+                </p>
+              </motion.div>
+            ))}
+          </div>
+
+        </div>
+      </section>
+
     </div>
-      <div className="max-w-[90%] mx-auto grid md:grid-cols-2 gap-12 items-start">
-        
-        {/* left Content */}
-        <div className="space-y-10">
-          {faqData.map((item) => (
-            <div key={item.id} className="flex flex-col gap-6">
-              
-              <div className="text-xl text-[#8D8271] font-light mt-1">
-                {item.id}.
-              </div>
-
-              <div>
-                <h3 className="text-xl uppercase tracking-widest mb-2 text-gray-300">
-                  {item.title}
-                </h3>
-                <p className="text-md leading-relaxed text-gray-400 max-w-md">
-                  {item.description}
-                </p>
-              </div>
-
-            </div>
-          ))}
-        </div>
-        {/* right Image */}
-        <div className="w-full h-screen flex justify-center">
-          <img
-            src="faq-img2.png"
-            alt="Interior Design"
-            className="w-full md:w-[400px] md:h-[500px] object-cover"
-          />
-        </div>
-
-
-      </div>
-    </section>
-      
-  <section className="bg-[#1c1c1c] text-[#d6d6d6] py-10 md:py-16 px-4 md:px-12">
-   
-      <div className="max-w-[90%] mx-auto grid md:grid-cols-2 gap-12 items-start">
-        
-        {/* Left */}
-        <div className="w-full h-screen flex justify-center items-center">
-          <img
-            src="faq-img.png"
-            alt="Interior Design"
-            className="w-full md:w-[400px] h-[500px] object-cover"
-          />
-        </div>
-
-        {/* Right */}
-        <div className="space-y-10">
-          {faqData2.map((item) => (
-            <div key={item.id} className="flex flex-col gap-6">
-              
-            
-              <div className="text-xl text-[#8D8271] font-light mt-1">
-                {item.id}.
-              </div>
-
-        
-              <div>
-                <h3 className="text-xl uppercase tracking-widest mb-2 text-gray-300">
-                  {item.title}
-                </h3>
-                <p className="text-md leading-relaxed text-gray-400 max-w-md">
-                  {item.description}
-                </p>
-              </div>
-
-            </div>
-          ))}
-        </div>
-
-      </div>
-    </section>
-            
-
-        </div>
-    );
+  );
 };
 
 export default Contact;

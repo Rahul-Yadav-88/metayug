@@ -1,10 +1,15 @@
 "use client"
 
+import { useState } from "react"
 import Image from "next/image"
 import Link from "next/link"
-import { blogs } from "../Blog/blog"
+import { motion, AnimatePresence } from "framer-motion"
 
+import KeywordsSection from "../../components/Home/Keyword.jsx"
+import ServicesSection from "../../components/Home/Service.jsx"
+import HeroSection from "../../components/Home/Hero.jsx"
 
+/* ================= BLOG DATA ================= */
 const posts = [
   {
     id: 1,
@@ -30,177 +35,187 @@ const posts = [
     image: "/b4.png",
     slug: "role-of-art-in-luxury-interior-design-2",
   },
+  {
+    id: 5,
+    title: "Minimal Luxury: Less is More",
+    image: "/b5.png",
+    slug: "minimal-luxury-less-is-more",
+  },
+  {
+    id: 6,
+    title: "How Lighting Changes Interior Mood",
+    image: "/b6.png",
+    slug: "how-lighting-changes-interior-mood",
+  },
 ]
 
+/* ================= FLOAT ANIMATION ================= */
+const floatAnimation = {
+  animate: { y: [0, -14, 0] },
+  transition: { duration: 6, repeat: Infinity, ease: "easeInOut" },
+}
+
 export default function BlogPage() {
-    return (
-        <main className="bg-[#111] text-[#eae7e2]">
-            {/* HERO */}
-            <section className="relative w-full h-[50vh] sm:h-[60vh] md:h-[70vh] lg:h-[80vh] overflow-hidden">
+  const BLOGS_PER_LOAD = 4
+  const [visibleCount, setVisibleCount] = useState(BLOGS_PER_LOAD)
 
+  const visiblePosts = posts.slice(0, visibleCount)
 
-                <img
-                    src="blog.png"
-                    alt="Kitchen interior"
-                    className="absolute inset-0 w-full h-full object-cover"
-                />
+  const loadMore = () => {
+    setVisibleCount((prev) => Math.min(prev + BLOGS_PER_LOAD, posts.length))
+  }
 
+  const showLess = () => {
+    setVisibleCount(BLOGS_PER_LOAD)
+  }
 
-                <div className="absolute inset-0 flex items-center justify-center px-4">
-                    <div className="relative flex items-center justify-center">
+  return (
+    <main className="bg-[#111] text-[#eae7e2] overflow-hidden">
 
+      {/* ================= HERO ================= */}
+      <HeroSection imageSrc="/85.webp" title="Our Blog" />
 
-                        <div
-                            className="
-                absolute 
-                w-[220px] h-[90px]
-                sm:w-[300px] sm:h-[120px]
-                md:w-[380px] md:h-[150px]
-                lg:w-[450px] lg:h-[170px]
-                bg-white/80 
-                blur-[50px] 
-                rounded-full
-              "
-                        ></div>
+      {/* ================= KEYWORDS ================= */}
+      <KeywordsSection
+        keywords={["LUXURY", "CRAFTSMANSHIP", "ELEGANCE", "OPULENCE", "MAJESTIC"]}
+      />
 
+      {/* ================= FEATURED ================= */}
+      <ServicesSection
+        imageSrc="/74.webp"
+        category="Featured Post"
+        title="Timeless Facade Design"
+        bgImages={["/71.webp", "/72.webp", "/73.webp"]}
+        imagePosition="right"
+        description="With meticulous attention to detail and an unwavering commitment to quality, we design spaces that are as exceptional as you are."
+      />
 
-                        <h1
-                            className="
-                relative 
-                text-3xl
-                sm:text-4xl
-                md:text-6xl
-                lg:text-7xl
-                font-serif 
-                text-gray-900 
-                tracking-[0.25em]
-                sm:tracking-[0.3em]
-                px-6
-                sm:px-10
-              "
-                        >
-                            Blog
-                        </h1>
+      {/* ================= LATEST POSTS ================= */}
+      <section className="min-h-screen py-24 px-4 perspective-[1600px]">
+        <div className="mx-auto max-w-7xl">
 
-                    </div>
-                </div>
-            </section>
-
-
-            {/* section 2 */}
-            <section className="bg-[#212121] text-[#E5E5E5] px-4 py-6 sm:py-8">
-                <ul
-                    className="flex flex-wrap justify-around gap-x-6 gap-y-4 text-sm sm:text-base md:text-xl lg:text-2xl tracking-widest"
-                >
-                    <li>LUXURY</li>
-                    <li>CRAFTSMANSHIP</li>
-                    <li>ELEGANCE</li>
-                    <li>OPULENCE</li>
-                    <li>MAJESTIC</li>
-                </ul>
-            </section>
-
-            {/* FEATURED */}
-            <section className="max-w-7xl mx-auto px-6 py-20 grid md:grid-cols-2 gap-12 items-center">
-                <div className="space-y-6">
-                    <p className="italic text-sm tracking-wider">Featured</p>
-                    <h2 className="text-2xl md:text-3xl font-light">
-                        A Featured Blog Post Title Would Go Here
-                    </h2>
-                    <p className="text-sm text-gray-300 leading-relaxed">
-                        With meticulous attention to detail and an unwavering commitment to quality, we design spaces that are as exceptional as you are.
-                    </p>
-                    <Link href="#" className="inline-block border px-6 py-2 text-xs tracking-widest hover:bg-white hover:text-black transition">
-                        READ POST
-                    </Link>
-                </div>
-                <div className="relative h-[400px]">
-                    <Image src="/featured.jpg" alt="Featured" fill className="object-cover" />
-                </div>
-            </section>
-
-            {/* LATEST POSTS */}
-            <main className="min-h-screen bg-charcoal py-16 px-4 md:py-24">
-      <div className="mx-auto max-w-7xl">
-        {/* Header */}
-        <div className="mb-12 text-center md:mb-16">
-          <p className="mb-4 text-xs uppercase tracking-[0.2em] text-stone-400">Design Journal</p>
-          <h1 className="font-serif text-4xl text-stone-100 md:text-5xl lg:text-6xl">Latest Posts</h1>
-        </div>
-
-        {/* Grid */}
-        <div className="mb-12 grid gap-6 md:grid-cols-2 md:gap-8 lg:gap-10">
-          {posts.map((post) => (
-            <article
-              key={post.id}
-              className="group relative flex flex-col bg-charcoal-light p-6 transition-all duration-300 hover:bg-charcoal-lighter md:p-8"
-            >
-              {/* Image Frame */}
-              <div className="relative mb-6 aspect-[4/3] overflow-hidden border-8 border-stone-900 bg-stone-950">
-                <Image
-                  src={post.image || "/placeholder.svg"}
-                  alt={post.title}
-                  fill
-                  className="object-cover transition-transform duration-500 group-hover:scale-105"
-                />
-              </div>
-
-              {/* Content */}
-              <div className="flex flex-1 flex-col items-center text-center">
-                <h2 className="mb-6 font-serif text-xl uppercase tracking-wide text-stone-200 md:text-2xl">
-                  {post.title}
-                </h2>
-
-                <Link
-                  href={`/Blog/${post.slug}`}
-                  className="mt-auto text-xs uppercase tracking-[0.2em] text-stone-400 transition-colors hover:text-stone-200"
-                >
-                  Learn More
-                </Link>
-              </div>
-            </article>
-          ))}
-        </div>
-
-        {/* See All Link */}
-        <div className="flex items-center justify-center gap-4">
-          <div className="h-px w-24 bg-stone-700" />
-          <Link
-            href="/posts"
-            className="text-xs uppercase tracking-[0.2em] text-stone-400 transition-colors hover:text-stone-200"
+          {/* Header */}
+          <motion.div
+            initial={{ opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+            className="mb-16 text-center"
           >
-            See All
-          </Link>
-          <div className="h-px w-24 bg-stone-700" />
+            <p className="mb-4 text-xs uppercase tracking-[0.25em] text-stone-400">
+              Design Journal
+            </p>
+            <h1 className="font-serif text-4xl md:text-5xl lg:text-6xl">
+              Latest Posts
+            </h1>
+          </motion.div>
+
+          {/* Grid */}
+          <AnimatePresence>
+            <div className="grid gap-8 md:grid-cols-2 lg:gap-12">
+              {visiblePosts.map((post, i) => (
+                <motion.article
+                  key={post.id}
+                  initial={{ opacity: 0, rotateX: 25, y: 80 }}
+                  animate={{ opacity: 1, rotateX: 0, y: 0 }}
+                  exit={{ opacity: 0, y: 40 }}
+                  transition={{ duration: 0.7, delay: i * 0.08 }}
+                  whileHover={{
+                    rotateY: 8,
+                    rotateX: -6,
+                    scale: 1.03,
+                  }}
+                  className="group relative bg-[#161616] p-6 md:p-8 transform-style-preserve-3d"
+                  style={{ transformStyle: "preserve-3d" }}
+                >
+                  {/* Floating Image */}
+                  <motion.div
+                    {...floatAnimation}
+                    className="relative mb-6 aspect-[4/3] overflow-hidden border-8 border-stone-900 bg-black"
+                    style={{ transform: "translateZ(40px)" }}
+                  >
+                    <Image
+                      src={post.image}
+                      alt={post.title}
+                      fill
+                      className="object-cover transition-transform duration-700 group-hover:scale-110"
+                    />
+                  </motion.div>
+
+                  {/* Content */}
+                  <div
+                    className="flex flex-col items-center text-center"
+                    style={{ transform: "translateZ(60px)" }}
+                  >
+                    <h2 className="mb-6 font-serif text-xl md:text-2xl uppercase tracking-wide">
+                      {post.title}
+                    </h2>
+
+                    <Link
+                      href={`/Blog/${post.slug}`}
+                      className="text-xs uppercase tracking-[0.25em] text-stone-400 hover:text-stone-200 transition"
+                    >
+                      Learn More
+                    </Link>
+                  </div>
+                </motion.article>
+              ))}
+            </div>
+          </AnimatePresence>
+
+          {/* ================= SEE ALL / SEE LESS ================= */}
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.6 }}
+            className="mt-20 flex items-center justify-center gap-10"
+          >
+            {visibleCount < posts.length && (
+              <motion.button
+                onClick={loadMore}
+                whileHover={{ scale: 1.1 }}
+                whileTap={{ scale: 0.95 }}
+                className="text-xs uppercase tracking-[0.3em] text-stone-400 hover:text-stone-200 transition"
+              >
+                See All
+              </motion.button>
+            )}
+
+            {visibleCount > BLOGS_PER_LOAD && (
+              <motion.button
+                onClick={showLess}
+                whileHover={{ scale: 1.1 }}
+                whileTap={{ scale: 0.95 }}
+                className="text-xs uppercase tracking-[0.3em] text-stone-400 hover:text-stone-200 transition"
+              >
+                See Less
+              </motion.button>
+            )}
+          </motion.div>
         </div>
-      </div>
+      </section>
+
+      {/* ================= CTA ================= */}
+      <motion.section
+        initial={{ opacity: 0, y: 60 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8 }}
+        viewport={{ once: true }}
+        className="py-28 text-center bg-[#0d0d0d]"
+      >
+        <h4 className="text-xl mb-8 max-w-xl mx-auto">
+          Let Us Help Transform Your Living Space into a Masterpiece.
+        </h4>
+
+        <motion.button
+          whileHover={{ scale: 1.1 }}
+          whileTap={{ scale: 0.95 }}
+          className="border px-10 py-4 text-xs tracking-[0.3em] hover:bg-white hover:text-black transition"
+        >
+          SCHEDULE CONSULTATION
+        </motion.button>
+      </motion.section>
+
     </main>
-
-            {/* CTA */}
-            <section className="py-24 text-center bg-[#0d0d0d]">
-                <h4 className="text-xl mb-6">Let Us Help Transform Your Living Space into a Masterpiece.</h4>
-                <button className="border px-8 py-3 text-xs tracking-widest hover:bg-white hover:text-black transition">
-                    SCHEDULE CONSULTATION
-                </button>
-            </section>
-
-            {/* FOOTER */}
-            <footer className="border-t border-white/10 py-12 px-6 text-sm">
-                <div className="max-w-7xl mx-auto grid md:grid-cols-3 gap-10">
-                    <div>
-                        <p className="tracking-widest mb-4">V Interiors</p>
-                        <p className="text-gray-400">Luxury interior design studio</p>
-                    </div>
-                    <nav className="space-y-2">
-                        {['Home', 'Portfolio', 'Services', 'About', 'Blog', 'Contact'].map(item => (
-                            <p key={item} className="hover:underline cursor-pointer">{item}</p>
-                        ))}
-                    </nav>
-                    <div className="text-gray-400">
-                        123 Peachtree Lane<br />Suite 400, Atlanta, GA 30303
-                    </div>
-                </div>
-            </footer>
-        </main>
-    )
+  )
 }

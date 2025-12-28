@@ -26,6 +26,8 @@ export default function Home() {
         subtitle="We create interiors that inspire, comfort, and elevate everyday living."
         buttonText="Explore"
         buttonAction={() => console.log("Home Hero Button Clicked")}
+          showButton={true}
+
       />
 
       {/* KEYWORDS */}
@@ -33,7 +35,7 @@ export default function Home() {
 
       {/* ABOUT SHOWCASE */}
       <AboutShowcase
-        imageSrc="/h1.webp"
+        imageSrc="/85.webp"
         text="We are a high-end interior design studio transforming interiors into majestic spaces."
       />
 
@@ -58,6 +60,8 @@ export default function Home() {
         category="Classic"
         title="Facade Design Services\nAnd Much More..."
         description="We craft timeless, elegant facades with precision and style."
+          bgImages={["/h6.webp", "/h2.webp", "/h7.webp"]} // array of background images
+
         services={servicesList}
       />
 

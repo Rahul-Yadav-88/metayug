@@ -13,27 +13,27 @@ const Projects = () => {
     {
       id: "bachelor-pad",
       title: "Contemporary Bachelor Pad",
-      image: "projects-img2.png",
+      image: "15.webp",
     },
     {
       id: "modern-living",
       title: "Modern Living Room",
-      image: "projects-img3.png",
+      image: "11.webp",
     },
     {
       id: "olive-opulence",
       title: "Olive Wood Opulence",
-      image: "projects-img4.png",
+      image: "12.webp",
     },
     {
       id: "white-elegant",
       title: "White Elegant Residential",
-      image: "projects-img5.png",
+      image: "13.webp",
     },
     {
       id: "exquisite-marble-bathroom",
       title: "Exquisite Marble Bathroom",
-      image: "projects-img7.png",
+      image: "14.webp",
     },
   ];
 
@@ -42,19 +42,19 @@ const Projects = () => {
       title: "Concept Driven Design",
       description:
         "Every project begins with a strong conceptual foundation. We translate ideas into architectural expressions that reflect clarity, purpose, and refined aesthetics.",
-      bg: "/f1.png",
+      bg: "/5.webp",
     },
     {
       title: "Material & Detail Focus",
       description:
         "We carefully curate materials, textures, and finishes to achieve balance and longevity, ensuring each design ages with elegance.",
-      bg: "/f2.png",
+      bg: "/6.webp",
     },
     {
       title: "Contextual Harmony",
       description:
         "Our designs respond thoughtfully to their surroundings—blending scale, proportion, and environment to create timeless architectural harmony.",
-      bg: "/f3.png",
+      bg: "/7.webp",
     },
   ];
 
@@ -87,9 +87,9 @@ const Projects = () => {
     <div className="bg-[#1c1c1c] text-white overflow-hidden">
       {/* HERO SECTION */}
       <HeroSection
-        imageSrc="/projects-hero.png"
-        title="Facade and luxury interior design—tailored exclusively for you."
-        subtitle="We create interiors that inspire, comfort, and elevate everyday living."
+        imageSrc="/9.webp"
+        title="Portfolio"
+        // subtitle="We create interiors that inspire, comfort, and elevate everyday living."
       />
 
       {/* KEYWORDS */}
