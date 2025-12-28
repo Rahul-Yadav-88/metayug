@@ -7,7 +7,7 @@ export default function ServicesSection({
   subtitle = "Services",
   title = "What We Do",
   services = [
-    { title: "Residential Facades", img: "/f1.webp" },
+    { title: "Residential Facades", img: "/fff.webp" },
     { title: "Commercial Elevations", img: "/f2.webp" },
     { title: "Exterior Renovation", img: "/f3.webp" },
   ],
@@ -15,7 +15,7 @@ export default function ServicesSection({
   return (
     <section className="bg-[#1c1c1c] py-20 px-4 perspective-[1400px]">
       <div className="max-w-6xl mx-auto">
-
+ 
         {/* Heading */}
         <div className="text-center mb-16">
           <p className="text-[15px] tracking-[0.35em] text-gray-500 uppercase">

@@ -111,7 +111,7 @@ const Projects = () => {
 
       {/* MATERIALS & CRAFTSMANSHIP */}
       <MaterialCraftsmanshipSection
-        image="/f1.png"
+        image="/fff.webp"
         title="Materials That Endure"
         description="From stone and wood to glass and metal, every material is selected with precision. Our craftsmanship ensures durability, refinement, and timeless architectural expression."
       />
