@@ -60,7 +60,7 @@ export default function Home() {
         category="Classic"
         title="Facade Design Services\nAnd Much More..."
         description="We craft timeless, elegant facades with precision and style."
-          bgImages={["/h6.webp", "/h2.webp", "/h7.webp"]} // array of background images
+          bgImages={["/h6.webp", "/h2.webp", "/h7.webp"]} 
 
         services={servicesList}
       />
