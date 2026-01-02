@@ -24,6 +24,81 @@ const posts = [
       "In conclusion, art enhances emotional connection, aesthetic appeal, and sophistication in luxury spaces."
     ]
   },
+  {
+    id: 2,
+    slug: "color-palettes-for-interiors-guide",
+    title: "The Role of Art in Luxury Interior Design",
+    date: "APRIL 23, 2025",
+    heroImage: "/b1.png",
+    contentImage: "/blog1.png",
+    quote: "The details are not the details. They make the design.",
+    paragraphs: [
+      "Art has long been a defining element of luxury interior design, serving as both an aesthetic centerpiece and a reflection of personal taste.",
+      "The placement of art in a luxury interior is equally important. A carefully curated gallery wall or oversized painting can define a room’s atmosphere.",
+      "In addition to its visual impact, art reflects the homeowner’s values, interests, and life experiences.",
+      "In conclusion, art enhances emotional connection, aesthetic appeal, and sophistication in luxury spaces."
+    ]
+  },
+  {
+    id: 3,
+    slug: "small-touches-impact-design",
+    title: "The Role of Art in Luxury Interior Design",
+    date: "APRIL 23, 2025",
+    heroImage: "/b1.png",
+    contentImage: "/blog1.png",
+    quote: "The details are not the details. They make the design.",
+    paragraphs: [
+      "Art has long been a defining element of luxury interior design, serving as both an aesthetic centerpiece and a reflection of personal taste.",
+      "The placement of art in a luxury interior is equally important. A carefully curated gallery wall or oversized painting can define a room’s atmosphere.",
+      "In addition to its visual impact, art reflects the homeowner’s values, interests, and life experiences.",
+      "In conclusion, art enhances emotional connection, aesthetic appeal, and sophistication in luxury spaces."
+    ]
+  },
+  {
+    id: 4,
+    slug: "role-of-art-in-luxury-interior-design-2",
+    title: "The Role of Art in Luxury Interior Design",
+    date: "APRIL 23, 2025",
+    heroImage: "/b1.png",
+    contentImage: "/blog1.png",
+    quote: "The details are not the details. They make the design.",
+    paragraphs: [
+      "Art has long been a defining element of luxury interior design, serving as both an aesthetic centerpiece and a reflection of personal taste.",
+      "The placement of art in a luxury interior is equally important. A carefully curated gallery wall or oversized painting can define a room’s atmosphere.",
+      "In addition to its visual impact, art reflects the homeowner’s values, interests, and life experiences.",
+      "In conclusion, art enhances emotional connection, aesthetic appeal, and sophistication in luxury spaces."
+    ]
+  },
+  {
+    id: 5,
+    slug: "minimal-luxury-less-is-more",
+    title: "The Role of Art in Luxury Interior Design",
+    date: "APRIL 23, 2025",
+    heroImage: "/b1.png",
+    contentImage: "/blog1.png",
+    quote: "The details are not the details. They make the design.",
+    paragraphs: [
+      "Art has long been a defining element of luxury interior design, serving as both an aesthetic centerpiece and a reflection of personal taste.",
+      "The placement of art in a luxury interior is equally important. A carefully curated gallery wall or oversized painting can define a room’s atmosphere.",
+      "In addition to its visual impact, art reflects the homeowner’s values, interests, and life experiences.",
+      "In conclusion, art enhances emotional connection, aesthetic appeal, and sophistication in luxury spaces."
+    ]
+  },
+  {
+    id: 6,
+    slug: "how-lighting-changes-interior-mood",
+    title: "The Role of Art in Luxury Interior Design",
+    date: "APRIL 23, 2025",
+    heroImage: "/b1.png",
+    contentImage: "/blog1.png",
+    quote: "The details are not the details. They make the design.",
+    paragraphs: [
+      "Art has long been a defining element of luxury interior design, serving as both an aesthetic centerpiece and a reflection of personal taste.",
+      "The placement of art in a luxury interior is equally important. A carefully curated gallery wall or oversized painting can define a room’s atmosphere.",
+      "In addition to its visual impact, art reflects the homeowner’s values, interests, and life experiences.",
+      "In conclusion, art enhances emotional connection, aesthetic appeal, and sophistication in luxury spaces."
+    ]
+  },
 ]
 
 export default function BlogDetailPage() {
