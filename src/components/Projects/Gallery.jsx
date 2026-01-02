@@ -8,7 +8,7 @@ export default function ProjectsGallery({ projects = [] }) {
       <div className="text-white flex flex-col items-center gap-10">
         <img src="projects-img.png" alt="" />
         <h3 className="text-2xl md:text-4xl text-center">
-          Explore Our Gallery <br /> of Sophisticated Interiors
+          Explore Our Gallery <br /> of Sophisticated Exterior
         </h3>
       </div>
 

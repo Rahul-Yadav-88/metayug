@@ -69,7 +69,7 @@ const Projects = () => {
     {
       title: "Exclusive",
       description:
-        "We create exclusive interiors tailored to the unique tastes and needs of our discerning clients.",
+        "We create exclusive Exterior tailored to the unique tastes and needs of our discerning clients.",
     },
     {
       title: "Opulent",
@@ -94,7 +94,7 @@ const Projects = () => {
 
       {/* KEYWORDS */}
       <KeywordsSection
-        keywords={["LUXURY", "CRAFTSMANSHIP", "ELEGANCE", "OPULENCE", "MAJESTIC"]}
+        keywords={["Bespoke Architecture · Crafted with Precision"]}
       />
 
       {/* HIGHLIGHTS */}

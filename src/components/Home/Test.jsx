@@ -31,7 +31,7 @@ export default function TestimonialSection() {
           transition={{ duration: 1, ease: "easeOut" }}
           className="font-serif text-xl max-w-3xl mx-auto mb-10 text-white"
         >
-          Working with Facadewala was a pleasure. We craft high-end facade designs that transform exteriors into majestic, captivating statements.
+         At Facadewala, we design and deliver high-end facades that elevate exteriors into powerful, majestic statements of architecture.
         </motion.p>
       </div>
     </section>

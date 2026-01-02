@@ -77,7 +77,7 @@ export default function Footer() {
               whileHover={{ y: -6 }}
               className="text-sm text-gray-400 space-y-1"
             >
-              <p>info@velainteriorsabc</p>
+              <p>info@facadewala.in</p>
               <p>123 Peachtree Lane</p>
               <p>Suite 400, Atlanta, GA 30309</p>
             </motion.div>

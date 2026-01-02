@@ -4,12 +4,7 @@ import { useEffect, useState } from "react"
 import { Menu, X } from "lucide-react"
 import Link from "next/link"
 import Image from "next/image"
-import {
-  motion,
-  AnimatePresence,
-  useMotionValue,
-  useTransform,
-} from "framer-motion"
+import { motion, AnimatePresence } from "framer-motion"
 
 const navLinks = [
   { name: "Home", href: "/" },
@@ -19,65 +14,21 @@ const navLinks = [
 ]
 
 /* ===============================
-   FLOATING IMAGE LOGO (CLICKABLE)
+   STATIC LOGO (NO ANIMATION)
 ================================ */
-function FloatingLogo() {
-  const mouseX = useMotionValue(0)
-  const mouseY = useMotionValue(0)
-
-  const rotateX = useTransform(mouseY, [-100, 100], [12, -12])
-  const rotateY = useTransform(mouseX, [-100, 100], [-12, 12])
-
+function Logo() {
   return (
     <Link href="/" aria-label="Go to home">
-      <motion.div
-        className="relative perspective-[1200px] cursor-pointer"
-        whileHover={{ scale: 1.08 }}
-        whileTap={{ scale: 0.95 }}
-        onMouseMove={(e) => {
-          const rect = e.currentTarget.getBoundingClientRect()
-          mouseX.set(e.clientX - rect.left - rect.width / 2)
-          mouseY.set(e.clientY - rect.top - rect.height / 2)
-        }}
-        onMouseLeave={() => {
-          mouseX.set(0)
-          mouseY.set(0)
-        }}
-      >
-        <motion.div
-          style={{ rotateX, rotateY }}
-          animate={{
-            y: [0, -14, 0],
-            rotateZ: [0, 1.5, -1.5, 0],
-          }}
-          transition={{
-            duration: 6,
-            repeat: Infinity,
-            ease: "easeInOut",
-          }}
-          className="relative transform-style-preserve-3d"
-        >
-          {/* Shadow */}
-          <motion.div
-            animate={{ scale: [1, 0.9, 1], opacity: [0.25, 0.15, 0.25] }}
-            transition={{ duration: 6, repeat: Infinity }}
-            className="absolute -bottom-3 left-1/2 -translate-x-1/2 w-16 h-4 bg-black/50 blur-xl rounded-full"
-          />
-
-          {/* Glow */}
-          <div className="absolute inset-0 bg-[#9c8f7a]/30 blur-2xl rounded-full -z-10" />
-
-          {/* Logo Image */}
-          <Image
-            src="/logo.png"
-            alt="V Interiors Logo"
-            width={100}
-            height={100}
-            priority
-            className="relative z-10 select-none"
-          />
-        </motion.div>
-      </motion.div>
+      <div className="relative cursor-pointer">
+        <Image
+          src="/logo.png"
+          alt="V Interiors Logo"
+          width={100}
+          height={100}
+          priority
+          className="select-none"
+        />
+      </div>
     </Link>
   )
 }
@@ -95,14 +46,14 @@ export default function Navbar() {
   return (
     <>
       <header className="fixed top-0 left-0 w-full z-40 bg-black/70 backdrop-blur-md">
-        <nav className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between perspective-[1400px]">
+        <nav className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
 
           {/* Left Menu */}
-          <ul className="hidden md:flex gap-10 text-sm tracking-widest uppercase text-gray-200 transform-style-preserve-3d">
+          <ul className="hidden md:flex gap-10 text-sm tracking-widest uppercase text-gray-200">
             {navLinks.slice(0, 3).map((link) => (
               <motion.li
                 key={link.name}
-                whileHover={{ rotateX: 12, rotateY: -8, translateZ: 30 }}
+                whileHover={{ y: -2 }}
                 transition={{ type: "spring", stiffness: 200, damping: 15 }}
                 className="relative group"
               >
@@ -115,15 +66,15 @@ export default function Navbar() {
           </ul>
 
           {/* Logo */}
-          <FloatingLogo />
+          <Logo />
 
           {/* Right Menu */}
-          <div className="hidden md:flex items-center gap-10 transform-style-preserve-3d">
+          <div className="hidden md:flex items-center gap-10">
             <ul className="flex gap-10 text-sm tracking-widest uppercase text-gray-200">
               {navLinks.slice(3).map((link) => (
                 <motion.li
                   key={link.name}
-                  whileHover={{ rotateX: 12, rotateY: 8, translateZ: 30 }}
+                  whileHover={{ y: -2 }}
                   transition={{ type: "spring", stiffness: 200, damping: 15 }}
                   className="relative group"
                 >
@@ -135,10 +86,7 @@ export default function Navbar() {
               ))}
             </ul>
 
-            <motion.div
-              whileHover={{ scale: 1.08, translateZ: 30 }}
-              transition={{ type: "spring", stiffness: 200 }}
-            >
+            <motion.div whileHover={{ scale: 1.05 }}>
               <Link
                 href="/Contact"
                 className="px-6 py-2 bg-[#9c8f7a] text-black text-sm uppercase tracking-widest hover:bg-white transition"
@@ -155,14 +103,16 @@ export default function Navbar() {
         </nav>
       </header>
 
-      {/* Mobile Menu */}
+      {/* ===============================
+          MOBILE MENU
+      =============================== */}
       <AnimatePresence>
         {open && (
           <motion.div
-            initial={{ x: "-100%", rotateY: 30 }}
-            animate={{ x: 0, rotateY: 0 }}
-            exit={{ x: "-100%", rotateY: 30 }}
-            transition={{ duration: 0.6, ease: "easeInOut" }}
+            initial={{ x: "-100%" }}
+            animate={{ x: 0 }}
+            exit={{ x: "-100%" }}
+            transition={{ duration: 0.5, ease: "easeInOut" }}
             className="md:hidden fixed inset-0 z-50 bg-black/95 backdrop-blur-xl"
           >
             <button
@@ -173,19 +123,36 @@ export default function Navbar() {
             </button>
 
             <div className="flex flex-col items-center justify-center h-full gap-8 text-white uppercase tracking-widest text-lg">
+
+              {/* Mobile Links */}
               {navLinks.map((link, i) => (
                 <motion.div
                   key={link.name}
                   initial={{ opacity: 0, y: 40 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: i * 0.1 }}
-                  whileHover={{ scale: 1.15 }}
                 >
                   <Link href={link.href} onClick={() => setOpen(false)}>
                     {link.name}
                   </Link>
                 </motion.div>
               ))}
+
+              {/* Mobile CTA */}
+              <motion.div
+                initial={{ opacity: 0, y: 40 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: navLinks.length * 0.1 }}
+              >
+                <Link
+                  href="/Contact"
+                  onClick={() => setOpen(false)}
+                  className="mt-6 inline-block px-8 py-3 bg-[#9c8f7a] text-black text-sm uppercase tracking-widest hover:bg-white transition"
+                >
+                  Book a Call
+                </Link>
+              </motion.div>
+
             </div>
           </motion.div>
         )}

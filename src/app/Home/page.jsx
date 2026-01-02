@@ -4,11 +4,12 @@ import Image from "next/image";
 import HeroSection from "../../components/Home/Hero.jsx";
 import KeywordsSection from "../../components/Home/Keyword.jsx";
 import AboutShowcase from "../../components/Home/Cro.jsx";
-import FounderIntro from "../../components/Home/Founder.jsx";
+// import FounderIntro from "../../components/Home/Founder.jsx";
 import BlogSection from "../../components/Home/Blog.jsx";
 import ServicesSection from "../../components/Home/Service.jsx";
 import TestimonialSection from "../../components/Home/Test.jsx";
-
+import MaterialCraftsmanshipSection from "../../components/Projects/Mcraft.jsx";
+import DownloadCatalogSection from "../../components/Home/cato.jsx";
 const servicesList = [
   "01. Residential Facade Design",
   "02. Commercial Facade Design",
@@ -22,24 +23,24 @@ export default function Home() {
       {/* HERO SECTION */}
       <HeroSection
         imageSrc="/h4.webp"
-        title="Facade and luxury interior design—tailored exclusively for you."
-        subtitle="We create interiors that inspire, comfort, and elevate everyday living."
+        title="Architectural facades, crafted for iconic structures."
+        subtitle="From design to execution — precision, craftsmanship, and in-house expertise."
         buttonText="Explore ."
         buttonAction={() => console.log("Home Hero Button Clicked")}
-          showButton={true}
+        showButton={true}
 
       />
 
       {/* KEYWORDS */}
-      <KeywordsSection keywords={["LUXURY", "CRAFTSMANSHIP", "ELEGANCE", "OPULENCE", "MAJESTIC"]} />
+      <KeywordsSection keywords={["Bespoke Architecture · Crafted with Precision"]} />
 
       {/* ABOUT SHOWCASE */}
       <AboutShowcase
         imageSrc="/85.webp"
-        text="We are a high-end interior design studio transforming interiors into majestic spaces."
+        text="We craft high-end exterior designs that transform spaces into timeless landmarks."
       />
 
-      {/* FOUNDER INTRO */}
+      {/* FOUNDER INTRO
       <FounderIntro
         imageSrc="/Founder_image.jpg"
         name="Marcus Finn"
@@ -49,6 +50,15 @@ export default function Home() {
           { label: "Our Team", action: () => console.log("Team clicked") },
           { label: "Get In Touch", action: () => console.log("Contact clicked"), bg: "border border-gray-500", textColor: "text-white" }
         ]}
+      /> */}
+
+
+      <MaterialCraftsmanshipSection
+        image="/f5.webp"
+        title="Vision"
+        description="Inspired by a pioneering spirit and a forward-thinking mindset, our vision is to embrace the limitless potential of design, innovation, and technology. Guided by the belief that “Anything is Possible,” we commit to uncompromising standards, boundless creativity, and values rooted in integrity.
+
+We aspire to redefine the built and digital landscape—crafting a legacy where resilience meets artistry, ideas evolve into purpose, and ambition is transformed into timeless excellence."
       />
 
       {/* TESTIMONIAL */}
@@ -60,7 +70,7 @@ export default function Home() {
         category="Classic"
         title="Facade Design Services\nAnd Much More..."
         description="We craft timeless, elegant facades with precision and style."
-          bgImages={["/h6.webp", "/h2.webp", "/h7.webp"]} 
+        bgImages={["/h6.webp", "/h2.webp", "/h7.webp"]}
 
         services={servicesList}
       />
@@ -68,11 +78,13 @@ export default function Home() {
       {/* BLOG + CTA */}
       <BlogSection
         posts={[
-          { title: "Luxury Interior Art", image: "/Hero_bg.jpg" },
+          { title: "Luxury Exterior Art", image: "/Hero_bg.jpg" },
           { title: "Color Palettes Guide", image: "/Hero_bg.jpg" },
           { title: "Small Touches Matter", image: "/Hero_bg.jpg" }
         ]}
       />
+
+      <DownloadCatalogSection />
 
     </main>
   );

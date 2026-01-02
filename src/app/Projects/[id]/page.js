@@ -101,7 +101,7 @@ export default function Page({ params }) {
 
       {/* ================= KEYWORDS ================= */}
       <KeywordsSection
-        keywords={["LUXURY", "CRAFTSMANSHIP", "ELEGANCE", "OPULENCE", "MAJESTIC"]}
+        keywords={["Bespoke Architecture · Crafted with Precision"]}
       />
 
       {/* ================= TAG LINE ================= */}

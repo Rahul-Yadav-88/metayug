@@ -46,7 +46,7 @@ const page = () => {
       />
       {/* KEYWORDS */}
       <KeywordsSection
-        keywords={["LUXURY", "CRAFTSMANSHIP", "ELEGANCE", "OPULENCE", "MAJESTIC"]}
+        keywords={["Bespoke Architecture · Crafted with Precision"]}
       />
 
 

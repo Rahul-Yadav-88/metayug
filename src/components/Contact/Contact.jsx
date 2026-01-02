@@ -74,11 +74,11 @@ const Contact = () => {
     <div className="min-h-screen bg-[#1C1C1C] overflow-hidden">
 
       {/* HERO */}
-      <HeroSection imageSrc="/h4.webp" title="Contact Us." showButton={false} />
+      <HeroSection imageSrc="/c1.webp" title="Contact Us." showButton={false} />
 
       {/* KEYWORDS */}
       <KeywordsSection
-        keywords={["LUXURY", "CRAFTSMANSHIP", "ELEGANCE", "OPULENCE", "MAJESTIC"]}
+        keywords={["Bespoke Architecture · Crafted with Precision"]}
       />
 
       {/* CONTACT FORM */}
@@ -131,7 +131,7 @@ const Contact = () => {
             {...floatAnimation}
           >
             <img
-              src="contact-form.png"
+              src="c2.webp"
               alt="Interior"
               className="w-full h-full object-cover"
             />
@@ -163,7 +163,7 @@ const Contact = () => {
 
           <motion.div {...floatAnimation} className="flex justify-center">
             <img
-              src="faq-img2.png"
+              src="c3.webp"
               className="w-[400px] h-[500px] object-cover"
             />
           </motion.div>
@@ -176,7 +176,7 @@ const Contact = () => {
 
           <motion.div {...floatAnimation} className="flex justify-center">
             <img
-              src="faq-img.png"
+              src="c4.webp"
               className="w-[400px] h-[500px] object-cover"
             />
           </motion.div>
