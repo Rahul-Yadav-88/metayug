@@ -14,37 +14,37 @@ const posts = [
   {
     id: 1,
     title: "The Role of Art in Luxury Interior Design",
-    image: "/b1.png",
+    image: "/20.webp",
     slug: "role-of-art-in-luxury-interior-design",
   },
   {
     id: 2,
     title: "Color Palettes for Interiors: The Guide",
-    image: "/b2.png",
+    image: "/21.webp",
     slug: "color-palettes-for-interiors-guide",
   },
   {
     id: 3,
     title: "Small Touches that Make an Impact in Design",
-    image: "/b3.png",
+    image: "/22.webp",
     slug: "small-touches-impact-design",
   },
   {
     id: 4,
     title: "The Role of Art in Luxury Interior Design",
-    image: "/b4.png",
+    image: "/23.webp",
     slug: "role-of-art-in-luxury-interior-design-2",
   },
   {
     id: 5,
     title: "Minimal Luxury: Less is More",
-    image: "/b5.png",
+    image: "/24.webp",
     slug: "minimal-luxury-less-is-more",
   },
   {
     id: 6,
     title: "How Lighting Changes Interior Mood",
-    image: "/b6.png",
+    image: "/25.webp",
     slug: "how-lighting-changes-interior-mood",
   },
 ]
