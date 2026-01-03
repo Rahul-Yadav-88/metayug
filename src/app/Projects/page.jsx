@@ -9,33 +9,34 @@ import FeaturesSection from "../../components/Projects/Feature.jsx";
 import MaterialCraftsmanshipSection from "../../components/Projects/Mcraft.jsx";
 
 const Projects = () => {
-  const projects = [
-    {
-      id: "bachelor-pad",
-      title: "Contemporary Bachelor Pad",
-      image: "15.webp",
-    },
-    {
-      id: "modern-living",
-      title: "Modern Living Room",
-      image: "11.webp",
-    },
-    {
-      id: "olive-opulence",
-      title: "Olive Wood Opulence",
-      image: "12.webp",
-    },
-    {
-      id: "white-elegant",
-      title: "White Elegant Residential",
-      image: "13.webp",
-    },
-    {
-      id: "exquisite-marble-bathroom",
-      title: "Exquisite Marble Bathroom",
-      image: "14.webp",
-    },
-  ];
+ const projects = [
+  {
+    title: "Contemporary Bachelor Pad",
+    image: "/15.webp",
+    link: "/Projects/bachelor-pad",
+  },
+  {
+    title: "Modern Living Room",
+    image: "/11.webp",
+    link: "/Projects/modern-living",
+  },
+  {
+    title: "Olive Wood Opulence",
+    image: "/12.webp",
+    link: "/Projects/olive-opulence",
+  },
+  {
+    title: "White Elegant Residential",
+    image: "/13.webp",
+    link: "/Projects/white-elegant",
+  },
+  {
+    title: "Exquisite Marble Bathroom",
+    image: "/14.webp",
+    link: "/Projects/exquisite-marble-bathroom",
+  },
+];
+
 
   const approaches = [
     {
