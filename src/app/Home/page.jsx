@@ -78,9 +78,9 @@ We aspire to redefine the built and digital landscape—crafting a legacy where 
       {/* BLOG + CTA */}
       <BlogSection
         posts={[
-          { title: "Luxury Exterior Art", image: "/Hero_bg.jpg" },
-          { title: "Color Palettes Guide", image: "/Hero_bg.jpg" },
-          { title: "Small Touches Matter", image: "/Hero_bg.jpg" }
+          { title: "Luxury Exterior Art", image: "/11.webp" },
+          { title: "Color Palettes Guide", image: "/12.webp" },
+          { title: "Small Touches Matter", image: "/13.webp" }
         ]}
       />
 

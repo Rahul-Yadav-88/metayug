@@ -13,33 +13,63 @@ import ServicesSection from "../../components/Home/Service.jsx"
 const blogs = [
   {
     title: "The Role of Art in Luxury Interior Design",
+<<<<<<< HEAD
     image: "/b1.png",
     link: "/Blog/role-of-art-in-luxury-interior-design",
+=======
+    image: "/20.webp",
+    slug: "role-of-art-in-luxury-interior-design",
+>>>>>>> ef2d0e295f565eb0b946a29847bb49d26b4da57f
   },
   {
     title: "Color Palettes for Interiors: The Guide",
+<<<<<<< HEAD
     image: "/b2.png",
     link: "/Blog/color-palettes-for-interiors-guide",
+=======
+    image: "/21.webp",
+    slug: "color-palettes-for-interiors-guide",
+>>>>>>> ef2d0e295f565eb0b946a29847bb49d26b4da57f
   },
   {
     title: "Small Touches that Make an Impact in Design",
+<<<<<<< HEAD
     image: "/b3.png",
     link: "/Blog/small-touches-impact-design",
+=======
+    image: "/22.webp",
+    slug: "small-touches-impact-design",
+>>>>>>> ef2d0e295f565eb0b946a29847bb49d26b4da57f
   },
   {
     title: "The Role of Art in Luxury Interior Design",
+<<<<<<< HEAD
     image: "/b4.png",
     link: "/Blog/role-of-art-in-luxury-interior-design-2",
+=======
+    image: "/23.webp",
+    slug: "role-of-art-in-luxury-interior-design-2",
+>>>>>>> ef2d0e295f565eb0b946a29847bb49d26b4da57f
   },
   {
     title: "Minimal Luxury: Less is More",
+<<<<<<< HEAD
     image: "/b5.png",
     link: "/Blog/minimal-luxury-less-is-more",
+=======
+    image: "/24.webp",
+    slug: "minimal-luxury-less-is-more",
+>>>>>>> ef2d0e295f565eb0b946a29847bb49d26b4da57f
   },
   {
     title: "How Lighting Changes Interior Mood",
+<<<<<<< HEAD
     image: "/b6.png",
     link: "/Blog/how-lighting-changes-interior-mood",
+=======
+    image: "/25.webp",
+    slug: "how-lighting-changes-interior-mood",
+>>>>>>> ef2d0e295f565eb0b946a29847bb49d26b4da57f
   },
 ]
 
