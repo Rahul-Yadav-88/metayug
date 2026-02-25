@@ -1,0 +1,46 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+.form-input {
+  @apply w-full bg-transparent border border-[#cb972b]/30
+         px-4 py-2 rounded-md text-white text-sm
+         placeholder:text-white/40
+         focus:outline-none focus:border-[#cb972b];
+}
+
+/* Select behavior fix */
+select {
+  color: white; /* selected value */
+}
+
+select option {
+  color: black;          /* dropdown text */
+  background-color: #fff;
+}
+
+
+
+
+
+
+
+/* :root {
+  --gold: #cb972b;
+  --gold-soft: #f9e3aa;
+}
+
+@layer utilities {
+  .gold-text {
+    @apply text-[var(--gold)];
+  }
+
+  .gold-border {
+    @apply border-[rgba(203,151,43,0.45)];
+  }
+
+  .gold-glow {
+    box-shadow: 0 25px 60px rgba(203,151,43,0.45);
+  }
+} */

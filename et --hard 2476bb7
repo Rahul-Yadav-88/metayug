@@ -1,0 +1,15 @@
+[33m8ac5e21[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m)[m HEAD@{0}: reset: moving to HEAD~1
+[33m2476bb7[m HEAD@{1}: commit: ''
+[33m8ac5e21[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m)[m HEAD@{2}: commit: Track large images using Git LFS
+[33m8bf5be5[m HEAD@{3}: commit: ''
+[33m48f8dbd[m[33m ([m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m)[m HEAD@{4}: commit: ''
+[33m31214b4[m HEAD@{5}: Branch: renamed refs/heads/clean-main to refs/heads/main
+[33m31214b4[m HEAD@{7}: commit (initial): Initial commit (cleaned large files)
+[33m995df73[m HEAD@{8}: commit: ''
+[33m636a2f6[m HEAD@{9}: commit: ''
+[33mbaf700e[m HEAD@{10}: commit: ''
+[33mb4546d4[m HEAD@{11}: commit: ''
+[33m6baa00f[m HEAD@{12}: commit: ''
+[33md303d32[m HEAD@{13}: pull origin main: Fast-forward
+[33mef2d0e2[m HEAD@{14}: commit: ''
+[33mdee4815[m HEAD@{15}: clone: from https://github.com/Rahul-Yadav-88/metayug.git
